@@ -12,7 +12,7 @@ namespace library_system
             if (File.Exists(url))
             {
                 var serializer = new XmlSerializer(typeof(List<Book>));
-                using (var reader = new StreamReader(@"library.xml"))
+                using (var reader = new StreamReader(url))
                 {
                     try
                     {
@@ -35,7 +35,7 @@ namespace library_system
         {
             var serializer = new XmlSerializer(typeof(List<Book>));
             
-            using (var writer = new StreamWriter(@"library.xml"))
+            using (var writer = new StreamWriter(url))
             {
                 serializer.Serialize(writer, books);
             }   

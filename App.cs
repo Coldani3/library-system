@@ -140,7 +140,6 @@ namespace library_system
                     book.Display();
                 }
 
-
                 //Single Responsibility - Insted of writing to file in the App, we relegate it to IFileTypes
                 fileManagers["filetype"].Write("library." + filetype.ToLower(), books);
 

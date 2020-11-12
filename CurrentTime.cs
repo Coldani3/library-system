@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace library_system
 {
-    public class CurrentTime : IUserInterfaceElement
+    public class CurrentTime : IUserInterfaceElement, IUpdateable
     {
         private DateTime time;
 

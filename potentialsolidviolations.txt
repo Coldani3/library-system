@@ -1,8 +1,4 @@
-IUserInterfaceElement: calling Update with inheritors aside from CurrentTime will crash - Liskov Substitution
-IUserInterfaceElement - Update is never used but subclasses are forced to implement it - Interface Segregation
-App.Run potentially does too much, as it not only handles main program logic but also handles saving and loading of files - Single Responsibility
-
-
+TODO:
 
 
 Liskov Substitution - If you swap a subclass for another, it should not break functionality
@@ -10,3 +6,9 @@ Single Responsibility - Each class/method has a single responsibility
 Open/Closed - Open for Extension, Closed for Modification
 Dependency Inversion Principle - Higher level classes should not depend on lower level classes, both should depend on abstractions
 Interface Segregation Principle - Clients should not be forced to implement methods they don't use
+
+
+DONE:
+App.Run potentially does too much, as it not only handles main program logic but also handles saving and loading of files - Single Responsibility
+IUserInterfaceElement - Update is never used but subclasses are forced to implement it - Interface Segregation
+IUserInterfaceElement: calling Update with inheritors aside from CurrentTime will crash - Liskov Substitution

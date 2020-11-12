@@ -10,6 +10,7 @@ namespace library_system
     interface IUserInterfaceElement
     {
         void Display();
-        void Update();
+        //Moved into IUpdateable as its inclusion here violated the Interface Segregation principle
+        //void Update();
     }
 }

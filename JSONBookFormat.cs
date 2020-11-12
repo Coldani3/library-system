@@ -13,7 +13,7 @@ namespace library_system
             if (File.Exists(url))
             {
                 string existingData;
-                using (StreamReader reader = new StreamReader(@"library.json", Encoding.Default))
+                using (StreamReader reader = new StreamReader(url, Encoding.Default))
                 {
                     existingData = reader.ReadToEnd();
                 }

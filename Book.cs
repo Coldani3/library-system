@@ -40,10 +40,7 @@ namespace library_system
             Console.WriteLine(ID + ", " + Author + ", " + Title + ", " + Publisher + ", " + DateOfPublication);
         }
 
-        public void Update()
-        {
-            throw new NotImplementedException();
-        }
-
+        //Removal of Update fixes the Liskov Substitution Principle violation, as Book can now be treated the exact same as any other
+        //IUserInterfaceElement without crashing
     }
 }
