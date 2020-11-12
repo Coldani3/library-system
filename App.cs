@@ -35,46 +35,7 @@ namespace library_system
                 time.Display();
                 //Single Responsibility Principle - Instead of doing all the readin gin the same file, we relegate it to IFileTypes
                 books = fileManagers[filetype].Read("library." + filetype.ToLower());
-
-                // switch (filetype)
-                // {
-                //     case "JSON":
-                //         if (File.Exists(@"library.json"))
-                //         {
-                //             string exisitingData;
-                //             using (StreamReader reader = new StreamReader(@"library.json", Encoding.Default))
-                //             {
-                //                 exisitingData = reader.ReadToEnd();
-                //             }
-                //             books = JsonConvert.DeserializeObject<List<Book>>(exisitingData);
-                //         }
-                //         else
-                //         {
-                //             books = new List<Book>();
-                //         }
-                //         break;
-                //     case "XML":
-                //         if (File.Exists(@"library.xml"))
-                //         {
-                //             var serializer = new XmlSerializer(typeof(List<Book>));
-                //             using (var reader = new StreamReader(@"library.xml"))
-                //             {
-                //                 try
-                //                 {
-                //                     books = (List<Book>)serializer.Deserialize(reader);
-                //                 }
-                //                 catch
-                //                 {
-                //                     Console.WriteLine("Could not load file");
-                //                 } // Could not be deserialized to this type.
-                //             }
-                //         }
-                //         else
-                //         {
-                //             books = new List<Book>();
-                //         }
-                //         break;
-                // }
+                
                 bool done = false;
 
                 string another = Input("Add a book y/n");
