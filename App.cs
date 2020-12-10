@@ -33,7 +33,7 @@ namespace library_system
                 Console.Clear();
                 time.Update();
                 time.Display();
-                //Single Responsibility Principle - Instead of doing all the readin gin the same file, we relegate it to IFileTypes
+                //Single Responsibility Principle - Instead of doing all the reading in the same file, we relegate it to IFileTypes
                 books = fileManagers[filetype].Read("library." + filetype.ToLower());
                 
                 bool done = false;
@@ -77,7 +77,7 @@ namespace library_system
                     } while (!validID);
 
                     string selectedCategory = libraryHelper.Categories[selectedCategoryID];
-                    Console.WriteLine("You have sected {0}", selectedCategory);
+                    Console.WriteLine("You have selected {0}", selectedCategory);
 
                     string title = Input("Title");
                     string author = Input("Author");
@@ -101,8 +101,29 @@ namespace library_system
                     book.Display();
                 }
 
+                //ADDITIONAL FUNCTIONALITY: Choosing file format
+                Console.WriteLine("Which format do you wish to save in?");
+                List<string> formats = new List<string>();
+
+                foreach (string format in fileManagers.Keys)
+                {
+                    formats.Add(format);
+                    Console.WriteLine(format);
+                }
+
+                string userInput = Console.ReadLine().ToUpper();
+                
+                if (formats.Contains(userInput))
+                {
+                    filetype = userInput;
+                }
+                else
+                {
+                    filetype = "JSON";
+                }
+
                 //Single Responsibility - Insted of writing to file in the App, we relegate it to IFileTypes
-                fileManagers["filetype"].Write("library." + filetype.ToLower(), books);
+                fileManagers[filetype].Write("library." + filetype.ToLower(), books);
 
                 //Console.WriteLine(itemsSerialized);
                 Console.ReadKey(true);

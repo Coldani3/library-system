@@ -12,3 +12,7 @@ DONE:
 App.Run potentially does too much, as it not only handles main program logic but also handles saving and loading of files - Single Responsibility
 IUserInterfaceElement - Update is never used but subclasses are forced to implement it - Interface Segregation
 IUserInterfaceElement: calling Update with inheritors aside from CurrentTime will crash - Liskov Substitution
+
+TO FIND:
+Open/Closed
+Dependency Inversion Principle
